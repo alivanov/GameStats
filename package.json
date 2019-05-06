@@ -1,0 +1,56 @@
+{
+  "name": "nodejs_initial_project",
+  "version": "1.0.0",
+  "description": "Nodejs prj template",
+  "main": "index.js",
+  "author": "Alexey Ivanov <alivanov@gsdeluxe.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "rimraf ./dist && babel -d ./dist ./src -s && node dist/main.js",
+    "dev": "node dev.js",
+    "lint:js": "eslint ./src",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": "eslint"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "airbnb-base",
+      "prettier"
+    ],
+    "env": {
+      "node": true
+    }
+  },
+  "pre-commit": "lint-staged",
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "lodash": "^4.17.11",
+    "rimraf": "^2.6.2"
+  },
+  "devDependencies": {
+    "babel-register": "^6.26.0",
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "lint-staged": "^7.3.0",
+    "pre-commit": "^1.2.2"
+  }
+}
