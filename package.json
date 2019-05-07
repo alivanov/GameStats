@@ -5,6 +5,9 @@
   "main": "index.js",
   "author": "Alexey Ivanov <ivanov@intspirit.com>",
   "license": "MIT",
+  "engines": {
+    "node": ">= 9.10.0"
+  },
   "scripts": {
     "start": "rimraf ./dist && babel -d ./dist ./src -s && NODE_ENV=production node dist/main.js",
     "dev": "NODE_ENV=development nodemon dev.js",
