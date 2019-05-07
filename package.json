@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Nodejs prj template",
   "main": "index.js",
-  "author": "Alexey Ivanov <alivanov@gsdeluxe.com>",
+  "author": "Alexey Ivanov <ivanov@intspirit.com>",
   "license": "MIT",
   "scripts": {
-    "start": "rimraf ./dist && babel -d ./dist ./src -s && node dist/main.js",
-    "dev": "node dev.js",
+    "start": "rimraf ./dist && babel -d ./dist ./src -s && NODE_ENV=production node dist/main.js",
+    "dev": "NODE_ENV=development nodemon dev.js",
     "lint:js": "eslint ./src",
     "lint-staged": "lint-staged"
   },
@@ -38,10 +38,14 @@
     ]
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
     "lodash": "^4.17.11",
+    "mongoose": "^5.5.5",
     "rimraf": "^2.6.2"
   },
   "devDependencies": {
@@ -51,6 +55,7 @@
     "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-import": "^2.14.0",
     "lint-staged": "^7.3.0",
+    "nodemon": "^1.19.0",
     "pre-commit": "^1.2.2"
   }
 }
